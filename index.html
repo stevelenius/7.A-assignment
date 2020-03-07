@@ -1,0 +1,42 @@
+<!-- index.html for 7.A-assignment (Show and Tell Collection) -->
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Assignment 7.A Collection</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+<body>
+  <h1>My Vintage Jazz Records</h1>
+  <h3>Mostly inherited from my grandfather</h3>
+
+  <div id="myRecords">
+    <table>
+      <tr>
+        <th>Song</th>
+        <th>Artist</th>
+        <th>Label</th>
+        <th>Record No.</th>
+        <th>Year</th>
+      </tr>
+<!-- Use v-for to loop through array and build table; 
+      use v-bind:class to make odd rows darker -->
+      <tr v-for="(item, index) in records" v-bind:class="{darkrow: index%2==0}">
+        <td>{{item.song}}</td>
+        <td>{{item.artist}}</td>
+        <td>{{item.label}}</td>
+        <td>{{item.recordNo}}</td>
+        <td>{{item.year}}</td>
+      </tr>
+    </table>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="7.A-assignment-vue.js"></script>
+
+</body>
+</html>
